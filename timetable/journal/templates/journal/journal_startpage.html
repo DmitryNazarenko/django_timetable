@@ -1,0 +1,37 @@
+{%extends 'journal/base_journal.html'%}
+
+{%block header%}
+      <p>User:  {{user.username}}</p>
+      <p><a href="{%url 'logout'%}">Sign out</a></p>
+{%endblock%}
+
+{%block content%}
+      <div id = "sidebar">
+        <ul>
+          <a href="{%url 'journal_timetable_url' month=1 day=1%}"><li class = 'bottom'>January</li></a>
+          <a href="{%url 'journal_timetable_url' month=2 day=1%}"><li class = 'bottom'>Februar</li></a>
+          <a href="{%url 'journal_timetable_url' month=3 day=1%}"><li class = 'bottom'>March</li></a>
+          <a href="{%url 'journal_timetable_url' month=4 day=1%}"><li class = 'bottom'>April</li></a>
+          <a href="{%url 'journal_timetable_url' month=5 day=1%}"><li class = 'bottom'>May</li></a>
+          <a href="{%url 'journal_timetable_url' month=6 day=1%}"><li class = 'bottom'>June</li></a>
+          <a href="{%url 'journal_timetable_url' month=7 day=1%}"><li class = 'bottom'>July</li></a>
+          <a href="{%url 'journal_timetable_url' month=8 day=1%}"><li class = 'bottom'>August</li></a>
+          <a href="{%url 'journal_timetable_url' month=9 day=1%}"><li class = 'bottom'>September</li></a>
+          <a href="{%url 'journal_timetable_url' month=10 day=1%}"><li class = 'bottom'>October</li></a>
+          <a href="{%url 'journal_timetable_url' month=11 day=1%}"><li class = 'bottom'>November</li></a>
+          <a href="{%url 'journal_timetable_url' month=12 day=1%}"><li class = 'bottom'>December</li></a>
+        </ul>
+      </div>
+
+      <section id= "main">
+          <div id = "main_2_border">
+            <div id = "main_1_border">
+                <div id="records">
+                  <p style = "text-align:center">
+                    <big>Chose month to see calendar and records</big>
+                  </p>
+                </div>
+            </div>
+          </div>
+      </section>
+{%endblock%}

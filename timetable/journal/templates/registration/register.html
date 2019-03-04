@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block title%}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <title> Registration Page </title>
+{%endblock%}
+
+{%block header%}
+<h3><a href="{% url 'login'%}">Login in</a>/Sign in</h3>
+{%endblock%}
+
+{%block content%}
+
+    {% if form.errors %}
+      <p>Something wrong with what you entered</p>
+    {%endif%}
+
+    <form  action="{% url 'register_url' %}" method="post">
+      {%csrf_token%}
+      {%for field in form%}
+        <p>{{field.label}}:{{field}}</p>
+      {%endfor%}
+      <p><button type="submit" name="button">Sign in</button></p>
+    </form>
+
+{%endblock%}

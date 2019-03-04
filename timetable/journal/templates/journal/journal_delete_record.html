@@ -1,0 +1,19 @@
+{%extends 'journal/base_journal.html'%}
+
+{%block header%}
+    <p>User:  {{user.username}}</p>
+    <p><a href="{%url 'logout'%}">Sign out</a></p>
+{%endblock%}
+
+{%block content%}
+      <section id= "main">
+        <form action="{% url 'journal_delete_record_url' month=month day=day slug=slug%}" method="post">
+          <div id="records">
+            <div id ="rec_submit">
+              {%csrf_token%}
+              <button type="submit">Delete Record</button>
+            </div>
+          </div>
+        </form>
+      </section>
+{%endblock%}

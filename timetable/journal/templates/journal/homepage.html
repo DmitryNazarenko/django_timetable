@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block title%}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <title>Homepage</title>
+{%endblock%}
+
+{%block header%}
+        <a href="{% url 'login' %}">
+        <div id=bottom>
+          <h3>Press button to start</h3>
+        </div>
+      </a>
+      <h3>Start your journal today!</h3>
+{%endblock%}
+
+{%block content%}
+    <section id = "main">
+      <div id="tableContainer">
+        <div id="tableRow">
+          <article id="left_image">
+            <img src="{% static 'image/screenshot_1.png' %}" alt="screenshot" width = "450" height ="300">
+            <p>Press month to see calendar.</p>
+          </article>
+          <article id="right_image">
+            <img src="{% static 'image/screenshot_2.png' %}" alt="screenshot" width = "450" height ="300">
+            <p>Press day to see records.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+{%endblock%}

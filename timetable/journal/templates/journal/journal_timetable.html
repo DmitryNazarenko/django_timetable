@@ -1,0 +1,71 @@
+{%extends 'journal/base_journal.html'%}
+
+{%block header%}
+    <p>Year:  {{year}}</p>
+    <p>User:  {{user.username}}</p>
+    <p><a href="{%url 'logout'%}">Sign out</a></p>
+{%endblock%}
+
+{%block content%}
+    <div id = "sidebar">
+      <ul>
+        <a href="{%url 'journal_timetable_url' month=1 day=1%}"><li class = 'bottom'>January</li></a>
+        <a href="{%url 'journal_timetable_url' month=2 day=1%}"><li class = 'bottom'>Februar</li></a>
+        <a href="{%url 'journal_timetable_url' month=3 day=1%}"><li class = 'bottom'>March</li></a>
+        <a href="{%url 'journal_timetable_url' month=4 day=1%}"><li class = 'bottom'>April</li></a>
+        <a href="{%url 'journal_timetable_url' month=5 day=1%}"><li class = 'bottom'>May</li></a>
+        <a href="{%url 'journal_timetable_url' month=6 day=1%}"><li class = 'bottom'>June</li></a>
+        <a href="{%url 'journal_timetable_url' month=7 day=1%}"><li class = 'bottom'>July</li></a>
+        <a href="{%url 'journal_timetable_url' month=8 day=1%}"><li class = 'bottom'>August</li></a>
+        <a href="{%url 'journal_timetable_url' month=9 day=1%}"><li class = 'bottom'>September</li></a>
+        <a href="{%url 'journal_timetable_url' month=10 day=1%}"><li class = 'bottom'>October</li></a>
+        <a href="{%url 'journal_timetable_url' month=11 day=1%}"><li class = 'bottom'>November</li></a>
+        <a href="{%url 'journal_timetable_url' month=12 day=1%}"><li class = 'bottom'>December</li></a>
+      </ul>
+    </div>
+    <section id= "main">
+      <div id = "main_2_border">
+        <div id="main_1_border">
+          <div id = "bordbord">
+            <table border="0" cellpadding="5" cellspacing="5" id="month_days">
+              <tr class="row" id = "weekdays">
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thuerday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+              </tr>
+              {%for daysinweek in daysinmonth%}
+                <tr class="row">
+                  {%for day in daysinweek%}
+                    {%if day == 0%}
+                      <td>&nbsp;</td>
+                    {%else%}
+                      <td> <a href="{%url 'journal_timetable_url' month=month day=day %}">{{day}}</a></td>
+                    {%endif%}
+
+                  {%endfor%}
+                </tr>
+              {%endfor%}
+            </table>
+          </div>
+          {%for record in record_db%}
+            <div id="records">
+              <p>{{record.record}}</p>
+              <div class="update">
+              <a href="{% url 'journal_update_record_url' month=month day=day slug=record.slug%}"> <p class = "no_padding">Update</p></a>
+              </div>
+              <div class="delete">
+                <a href="{% url 'journal_delete_record_url' month=month day=day slug=record.slug%}"><p class = "no_padding">-</p></a>
+              </div>
+            </div>
+          {%endfor%}
+          <div class="add">
+            <a href="{% url 'journal_add_record_url' month=month day=day%}"><p class="no_padding">+</p></a>
+          </div>
+        </div>
+      </div>
+  </section>
+{%endblock%}

@@ -1,0 +1,77 @@
+body{
+  background-color: #7e725b;
+  margin:0px;
+  font-family:      Georgia, "Times New Roman", Times, serif;
+  font-size:        medium;
+  text-align:center;
+}
+header{
+  background-color: #efe5d0;
+  border-bottom:3px solid black;
+  padding-top:10px;
+  height: 250px;
+  width:100%;
+}
+article{
+  display:table-cell;
+  vertical-align: center;
+}
+article img{
+  border:2px solid black;
+}
+footer{
+  background-color:#675c47;
+  color:#cc9934;
+  height: 30px;
+  margin:0px 5px 5px 5px;
+  padding:15px 5px 5px;
+  border:2px solid black;
+  width:98,5%;
+  font-size:small;
+  color:            #efe5d0;
+}
+
+#bottom h3{
+  background-color: #e8e0ad;
+  padding: 5px 0px 5px 0px;
+  margin:50px auto 0px;
+  width:250px;
+  height:30px;
+  border:2px solid black;
+  border-color: #675c47;
+  border-radius:50px;
+}
+section p{
+  margin:5px;
+  font-size:120%;
+  width: 450px;
+}
+#left_image{
+  padding-right:90px;
+}
+#right_image{
+  padding-left:90px;
+}
+#tableContainer{
+  display:table;
+  margin: 0px auto 0px;
+  border-spacing: 30px;
+  border-right: 1px solid black;
+  border-left:1px solid black;
+  padding: 10px 0px 20px;
+  background-color: #b5a789;
+}
+#tableRow{
+  display:table-row;
+}
+a:link {
+  color:            #b76666;
+  text-decoration:  none;
+}
+a:visited {
+  color:            #675c47;
+  text-decoration:  none;
+}
+a{
+  outline:none;
+}

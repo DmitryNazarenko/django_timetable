@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block title%}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <title> Log out Page </title>
+{%endblock%}
+
+{%block header%}
+<h3><a href="{% url 'login'%}">Login in</a>/<a href="{% url 'register_url'%}">Sign in</a></h3>
+{%endblock%}
